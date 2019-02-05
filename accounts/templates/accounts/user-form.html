@@ -1,0 +1,73 @@
+{% if error %}
+{{ error }}
+<br />
+<br />
+{% endif %}
+
+<h1>Sign Up!</h1>
+
+<form method="POST" action="{% url 'user-form' %}">
+{% csrf_token %}
+First Name:
+<br />
+<input type="text" name="firstname" />
+<br />
+Last Name:
+<br />
+<input type="text" name="lastname" />
+<br />
+Phone Number:
+<br />
+<input type="text" name="phonenumber" maxlength="10" minlength="10" />
+<br />
+Date Of Birth:
+<br />
+<input type="date" id = "date" name="dob" />
+<br />
+Email:
+<br />
+<input type="email" name="email" />
+<br />
+Password:
+<br />
+<input type="password" name="password1" />
+<br />
+Confirm Password:
+<br />
+<input type="password" name="password2" />
+<br />
+<br />
+<input type="submit" class="btn btn-primary" value="Save" name="submit" id="submit" onclick="_setAge();" />
+
+</form>
+
+
+
+
+<script type="text/javascript">
+
+        var minAge = 18;
+        function _calcAge() {
+            var date = new Date(document.getElementById("date").value);
+            var today = new Date();
+
+            var timeDiff = Math.abs(today.getTime() - date.getTime());
+            var age1 = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
+            return age1;
+        }
+        //Compares calculated age with minimum age and acts according to rules//
+        function _setAge() {
+
+            var age = _calcAge();
+            //alert("my age is " + age);
+            if (age < minAge) {
+                alert("You are not allowed into the site. The minimum age is 18!");
+            } //else
+            //
+            //     alert("Welcome to my Site");
+            // window.open(main.htm, _self);
+
+        }
+
+
+    </script>
