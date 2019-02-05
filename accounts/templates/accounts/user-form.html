@@ -10,31 +10,31 @@
 {% csrf_token %}
 First Name:
 <br />
-<input type="text" name="firstname" />
+<input size="20" type="text" name="firstname" />
 <br />
 Last Name:
 <br />
-<input type="text" name="lastname" />
-<br />
-Phone Number:
-<br />
-<input type="text" name="phonenumber" maxlength="10" minlength="10" />
+<input type="text" size="20" name="lastname" />
 <br />
 Date Of Birth:
 <br />
-<input type="date" id = "date" name="dob" />
+<input type="date" size="200" id = "date" name="date" />
 <br />
 Email:
 <br />
-<input type="email" name="email" />
+<input type="email" width="200" name="email" />
+<br />
+Phone Number:
+<br />
++91<input type="number" size="200" name="phonenumber" maxlength="10" minlength="10" />
 <br />
 Password:
 <br />
-<input type="password" name="password1" />
+<input type="password" width="200" name="password1" />
 <br />
 Confirm Password:
 <br />
-<input type="password" name="password2" />
+<input type="password" width="200" name="password2" />
 <br />
 <br />
 <input type="submit" class="btn btn-primary" value="Save" name="submit" id="submit" onclick="_setAge();" />
@@ -44,7 +44,7 @@ Confirm Password:
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
         var minAge = 18;
         function _calcAge() {
@@ -70,4 +70,4 @@ Confirm Password:
         }
 
 
-    </script>
+    </script> -->

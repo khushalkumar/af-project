@@ -12,7 +12,7 @@ class CustomUserManager(BaseUserManager):
 
     use_in_migrations = True
 
-    def _create_user(self, email, password, phone_number,dob, **extra_fields):
+    def _create_user(self, email, password, phone_number, dob, **extra_fields):
         """Create and save a User with the given email and password, dob, phone_number ."""
         if not email:
             raise ValueError('The given email must be set')
@@ -28,7 +28,7 @@ class CustomUserManager(BaseUserManager):
         """Create and save a regular User with the given email and password."""
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
-        return self._create_user(email, password, dob, phone_number, **extra_fields)
+        return self._create_user(email, password, phone_number, dob, **extra_fields)
 
     def create_superuser(self, email, password, **extra_fields):
         """Create and save a SuperUser with the given email and password."""
@@ -40,7 +40,7 @@ class CustomUserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
 
-        return self._create_user(email, password, dob = 'null', phone_number = 'null', **extra_fields)
+        return self._create_user(email, password, phone_number = 'null', dob = '1994-12-12', **extra_fields)
 
 
 
@@ -56,7 +56,7 @@ class CustomUser(AbstractUser):
 # Telling Django that you are going to use the email field as the USERNAME_FIELD.
 # Removing the email field from the REQUIRED_FIELDS settings (it is automatically included as USERNAME_FIELD)."""
     username = None
-    email = models.EmailField(verbose_name='email dob', unique=True)
+    email = models.EmailField(verbose_name='email address', unique=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
