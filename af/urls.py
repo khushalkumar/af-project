@@ -19,7 +19,7 @@ from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.form, name = 'home'),
+    path('', views.home, name = 'home'),
     path('user-form/', views.form, name = 'user-form'),
     path('thankyou/', views.thankyou, name = 'thankyou'),
 ]
