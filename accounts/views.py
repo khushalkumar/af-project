@@ -28,3 +28,7 @@ def form(request):
 
 def thankyou(request):
     return render(request, 'accounts/thankyou.html')
+
+
+def home(request):
+    return render(request, 'accounts/home.html')
