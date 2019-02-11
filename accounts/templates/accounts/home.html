@@ -1,5 +1,11 @@
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+{% extends 'base.html' %}
+{% block content %}
+<br/><br/><br/><br/><br/><br/>
+<div class= "jumbotron">
 <h1 style="text-align:center">Click to input your details:
 <br/>
 <a href="{% url 'user-form' %}">Here!</a>
 </h1>
+</div>
+<br/><br/><br/><br/>
+{% endblock %}
